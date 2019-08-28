@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href = "style.css">
+        <!--A simple test to better understand how forms can be manipulated in the DOM using Javascript-->
+        <title>rock-paper-scissors</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <main>
+            <div class = "wrapper">
+                <div class = "head">
+                    <header>
+                        <h1>Rock, Paper, Scissors</h1>
+                    </header>
+                </div>
+                <div class = "center">  
+                    <section>
+                        <p>You know the rules: rock beats scissors, scissors slices paper, and paper covers rock. 
+                            A full on cycle, yo.
+                        </p>
+                        <p>Once you're gassed up and ready to throw hands
+                            in the biggest showdown of the century, go
+                            ahead and toggle <b>'Begin Game'</b> to, well,
+                            begin the game. Press <b>"Start Over"</b> to
+                            restart the scoreboard. Good luck!
+                        </p>
+                        <div class = "game">
+                            <h2>Ready to play?</h2>
+                        <div class = "btn">
+                            <button onclick = 'playRound(userChoice(), computerChoice())'>Begin Game</button>
+                            <button onclick = 'startOver()'>Start Over</button>
+                        </div>
+                        </div>
+                        </section>
+                    </section>
+                </div>
+                <div id = "scoreboard">
+                    <section>
+                        <h3>Scoreboard</h3>
+                        <p>Player Score: <span id = 'player'>0</span></p>
+                        <p>Computer Score: <span id = 'computer'>0</span></p>
+                        <p>Draws: <span id = 'draw'>0</span></p>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <script type = "text/javascript" src="script.js"></script>
+    </body>
+</html>
