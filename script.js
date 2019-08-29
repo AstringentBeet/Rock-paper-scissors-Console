@@ -1,10 +1,7 @@
-/next goal is to shorten the lines of code.
+//next goal is to shorten the lines of code.
 
 let userScore = 0;
 let  notUserScore = 0;
-//testing draw count to decipher where the score bug is occuring; will simply annouce a draw afterwards.
-let tie = 0;
-
 
 //will be used for event listers 
 let playGroup = {
@@ -16,36 +13,28 @@ let playGroup = {
 //Will most likely make a smaller, objectified version of the next few functions.
 
 //increases the 'player' scoreboard.
-let win = () => {
+let win = (userSelection, computerChoice) => {
     userScore++;
     playGroup.player.innerHTML = userScore;
     playGroup.computer.innerHTML = notUserScore;
-    playGroup.draw.innerHTML = tie
+    //playGroup.draw.innerHTML = tie
+    alert(`${userSelection} beats ${computerChoice}\nPlayer : ${userScore}\nComputer : ${notUserScore}\nLook at you earnin' that W. Way to go!`);
 }
 
-
 //increases the 'lose' scoreboard.
-let lose = () => {
+let lose = (userSelection, computerChoice) => {
     notUserScore++;
     playGroup.computer.innerHTML = notUserScore;
     playGroup.player.innerHTML = userScore;
-    playGroup.draw.innerHTML = tie;
-    //alert(`${} beats ${}\n`)
-}
-
-//increases the 'draw' scoreboard.
-let middle = () => {
-    tie++;
-    playGroup.draw.innerHTML = tie;
-    playGroup.player.innerHTML = userScore;
-    playGroup.computer.innerHTML = notUserScore;
+    //playGroup.draw.innerHTML = tie;
+    alert(`${computerChoice} beats ${userSelection}\nPlayer : ${userScore}\nComputer : ${notUserScore}\nOof...take this L, fam.`);
 }
 
 //restarts scoreboard.
 let startOver = () =>{
     userScore = notUserScore = tie = 0;
-    playGroup.player.innerHTML = userScore
-    playGroup.computer.innerHTML = notUserScore
+    playGroup.player.innerHTML = userScore;
+    playGroup.computer.innerHTML = notUserScore;
     playGroup.draw.innerHTML = tie;
 }
 //Scoreboard ends
@@ -87,13 +76,13 @@ let playRound = (playerSelection, computerSelection) => {
 //Updates and keeps track of the score
     if(weapons[playerSelection].strongTo === computerSelection) {
         alert("You won this round!");
-        win();
+        win(playerSelection, computerSelection);
     } else if(weapons[playerSelection].weakTo === computerSelection) {
         alert("Computer won this round!");
-        lose();
+        lose(playerSelection, computerSelection);
     } else {
         alert("This is a draw!");
-        middle();
+        //middle();
     }
     let again = prompt("Play game again?");
     let answer = again.toLocaleLowerCase();
