@@ -56,6 +56,11 @@ b {
     text-align: center;
 }
 
+#result{
+    font-weight: 700;
+    color: #6699A1;
+}
+
 .marg{
     margin: 25px 0px -5px 0px;
 }
