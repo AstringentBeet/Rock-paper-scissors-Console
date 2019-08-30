@@ -1,4 +1,6 @@
 body{
+    background-color: #C73E3A;
+    color: gainsboro;
     font-family: sans-serif;
     width: 100%;
 }
@@ -34,6 +36,18 @@ b {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.btn{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width:100px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gainsboro;
+    background-color: #6699A1;
 }
 
 #scoreboard{
