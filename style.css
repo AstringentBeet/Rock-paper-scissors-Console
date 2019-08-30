@@ -7,7 +7,7 @@ body{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 80px 420px 180px;
+    grid-template-rows: 80px 440px 180px;
     justify-items: center;
 }
 

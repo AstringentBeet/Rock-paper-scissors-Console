@@ -1,4 +1,4 @@
-//next goal is to shorten the lines of code.
+///next goal is to shorten the lines of code.
 
 let userScore = 0;
 let  notUserScore = 0;
@@ -6,8 +6,7 @@ let  notUserScore = 0;
 //will be used for event listers 
 let playGroup = {
   player : document.getElementById('player'),
-  computer : document.getElementById('computer'),
-  draw : document.getElementById('draw')
+  computer : document.getElementById('computer')
 }
 
 //Will most likely make a smaller, objectified version of the next few functions.
@@ -17,8 +16,7 @@ let win = (userSelection, computerChoice) => {
     userScore++;
     playGroup.player.innerHTML = userScore;
     playGroup.computer.innerHTML = notUserScore;
-    //playGroup.draw.innerHTML = tie
-    alert(`${userSelection} beats ${computerChoice}\nPlayer : ${userScore}\nComputer : ${notUserScore}\nLook at you earnin' that W. Way to go!`);
+    console.log(`${userSelection} beats ${computerChoice}\nPlayer : ${userScore}\nComputer : ${notUserScore}\nLook at you earnin' that W. Way to go!`);
 }
 
 //increases the 'lose' scoreboard.
@@ -26,8 +24,7 @@ let lose = (userSelection, computerChoice) => {
     notUserScore++;
     playGroup.computer.innerHTML = notUserScore;
     playGroup.player.innerHTML = userScore;
-    //playGroup.draw.innerHTML = tie;
-    alert(`${computerChoice} beats ${userSelection}\nPlayer : ${userScore}\nComputer : ${notUserScore}\nOof...take this L, fam.`);
+    console.log(`${computerChoice} beats ${userSelection}\nPlayer : ${userScore}\nComputer : ${notUserScore}\nOof...take this L, fam.`);
 }
 
 //restarts scoreboard.
@@ -35,7 +32,6 @@ let startOver = () =>{
     userScore = notUserScore = tie = 0;
     playGroup.player.innerHTML = userScore;
     playGroup.computer.innerHTML = notUserScore;
-    playGroup.draw.innerHTML = tie;
 }
 //Scoreboard ends
 
@@ -48,16 +44,15 @@ const weapons = {
 
  //prompts user input for game to start
 let userChoice = () => {
-    let beginGame = prompt("Rock, paper, or scissors?");
-    let parsedQuestion = beginGame.toLowerCase();
-    let validResponse = ["rock", "paper", "scissors"];
-    if(validResponse.includes(parsedQuestion)) {
-        return parsedQuestion;
-    } else {
-        alert("That's not what we're looking for, friend. Try again");
-        return userChoice();
+        start = prompt("Rock, paper, or scissors?").toLowerCase();
+        let validResponse = ["rock", "paper", "scissors"];
+        if(validResponse.includes(start)) {
+            return start;
+        } else {
+            alert("That's not what we're looking for, friend. Try again");
+            return userChoice();
+        }
     }
-}
 
 //generates a random input for computer to use
 function computerChoice() {
@@ -71,24 +66,24 @@ function computerChoice() {
     }
 }
 
-//determines the winner of the rounds
-let playRound = (playerSelection, computerSelection) => {
-//Updates and keeps track of the score
+//directly compares the two entries
+let compare = (playerSelection, computerSelection) => {
+    //Updates and keeps track of the score
     if(weapons[playerSelection].strongTo === computerSelection) {
-        alert("You won this round!");
+        console.log("You won this round!");
         win(playerSelection, computerSelection);
     } else if(weapons[playerSelection].weakTo === computerSelection) {
-        alert("Computer won this round!");
+        console.log("Computer won this round!");
         lose(playerSelection, computerSelection);
     } else {
-        alert("This is a draw!");
-        //middle();
+        console.log("This is a draw!");
     }
-    let again = prompt("Play game again?");
-    let answer = again.toLocaleLowerCase();
-    if(answer == "yes" || answer == "y"){
-        playRound(userChoice(), computerChoice());
-    } else {
-        alert("Thanks for playing!");
+
+}
+    
+//plays the actual game with rounds.
+let playRound = (/*rounds*/) => {
+    for(i = 0; i < 5; i++){
+        compare(userChoice(), computerChoice());
     }
 }
