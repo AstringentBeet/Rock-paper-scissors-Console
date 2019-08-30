@@ -102,6 +102,6 @@ let playRound = (/*rounds*/) => {
         playGroup.result.innerHTML = "Look at you earnin' that W. Way to go!"
     } else {
         console.log(`Player : ${userScore}\nComputer : ${notUserScore}\nOof...take this L, fam.`);
-        playGroup.result.innerHTML = "Oof...take this L, fam."
+        playGroup.result.innerHTML = "Oof...take this L, fam.";
     }
 }
