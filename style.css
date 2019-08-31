@@ -1,6 +1,6 @@
 body{
-    background-color: #C73E3A;
-    color: gainsboro;
+    background-color: #91B493;
+    color: white;
     font-family: sans-serif;
     width: 100%;
 }
@@ -38,6 +38,12 @@ b {
     flex-direction: column;
 }
 
+.btn-group{
+    display: flex;
+    justify-content: space-around;
+    width: 250px;
+}
+
 .btn{
     cursor: pointer;
     border: none;
@@ -45,9 +51,14 @@ b {
     height: 40px;
     width:100px;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: gainsboro;
-    background-color: #6699A1;
+    font-weight: 500;
+    font-family: sans-serif;
+    color: white;
+    background-color: #E9A368;
+}
+
+.btn:hover{
+    box-shadow: 0px 1px 5px #6e6e6e;
 }
 
 #scoreboard{
@@ -58,7 +69,6 @@ b {
 
 #result{
     font-weight: 700;
-    color: #6699A1;
 }
 
 .marg{
