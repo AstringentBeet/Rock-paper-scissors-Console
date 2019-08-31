@@ -50,6 +50,7 @@ b {
 }
 
 .btn{
+    position: relative;
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -60,10 +61,24 @@ b {
     font-family: sans-serif;
     color: white;
     background-color: #E9A368;
+    box-shadow: 0px 1px 5px 0px #6e6e6e;
 }
 
-.btn:hover{
-    box-shadow: 0px 1px 5px #6e6e6e;
+.btn::before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0 6px 8px 0px #6e6e6e;
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.btn:hover::before{
+    opacity: 1;
 }
 
 #scoreboard{
